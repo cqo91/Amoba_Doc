@@ -1,11 +1,103 @@
 \chapter{Anforderungen}
 \label{cha:anforderungen}
-Kurzes Text
+In diesem Kapitel werden die Anforderungen an das Spiel definiert. Dabei legen die funktionalen Anforderungen fest, wozu das Spiel imstande sein soll. Die nicht-funktionalen Anforderungen beschreiben, wie gut diese Anforderungen umgesetzt werden sollen.
 
 % Abschnitt: Funktionale Anforderungen
 \section{Funktionale Anforderungen}
 \label{sec:grundlagen:funktionaleAnforderungen}
+In Tabelle \ref{tab:grundlagen:funktionaleAnforderungen} werden die funktionalen Anforderungen an das Spiel und die jeweilige Priorisierung mit Werten von 1 (unwichtig) bis 5 (unabdingbar) formuliert.
+
+\begin{center}
+    \label{tab:grundlagen:funktionaleAnforderungen}
+    \begin{tabular}{ c | l | c}
+        Abkürzung & Anforderung & Priorität\\
+        \hline
+        FA01 & An- und Abmelden & 4 \\
+        \hline
+        FA02 & Spiel erstellen & 5 \\
+        \hline
+        FA03 & Spiel beitreten & 5 \\
+        \hline
+        FA04 & Multiplayer (2 Spieler) & 5 \\
+        \hline
+        FA05 & Animation der Spieler & 4 \\
+        \hline
+        FA06 & Verschiedene Level & 4 \\
+        \hline
+        FA07 & Verschiedene Level-Themen & 3 \\
+        \hline
+        FA08 & Verschiedene Spielobjekte & 4 \\
+        \hline
+        FA09 & Animation der Spielobjekte & 2 \\
+    \end{tabular}
+    \captionof{table}{Funktionale Anforderungen} 
+\end{center}
+
+\textbf{FA01 An- und Abmelden}\\*
+Der Nutzer kann sich im Spiel anmelden. Anschließend kann er das Spiel uneingeschränkt verwenden. Er bleibt so lange angemeldet bis er sich abmeldet.
+
+\textbf{FA02 Spiel erstellen}\\*
+Ein Spiel kann von jedem angemeldeten Nutzer erstellt werden. Dabei kann der Nutzer nur die Level verwenden, die er freigeschalten hat.
+
+\textbf{FA03 Spiel beitreten}\\*
+Jeder Nutzer kann jedem beliebigen Spiel beitreten unabhängig davon welche Level der Nutzer selbst freigeschalten hat.
+
+\textbf{FA04 Multiplayer}\\*
+Das Spiel soll ausschließlich von zwei Nutzern gespielt werden können. Die Nutzer sollen dabei den jeweiligen Mitspieler auf ihrem eigenen Gerät sehen können.
+
+\textbf{FA05 Animation der Spieler}\\*
+Die verschiedenen Möglichkeiten der Steuerung eines Spielers sollen mit Animationen unterlegt werden. 
+
+\textbf{FA06 Verschiedene Level}\\*
+Es soll mehr als ein Level geben. Der Nutzer hat anfangs nur die Möglichkeit das erste Level zu spielen. Erst nach Abschluss eines Levels wird das nächste freigeschalten.
+
+\textbf{FA07 Verschiedene Level-Themen}\\*
+Die Level sollen sich im Design voneinander unterscheiden. Die Spielerfiguren und Spielobjekte bleiben dabei die gleichen im Aussehen und in ihrer Funktion.
+
+\textbf{FA08 Verschiedene Spielobjekte}\\*
+Durch verschiedene Spielobjekte innherhalb des Spiels wird das Spiel abwechslungsreich und komplex. Jedes dieser Spielobjekte hat dabei einen unterschiedlichen Effekt.
+
+\textbf{FA09 Animation der Spielobjekte}\\*
+Die Spielobjekte sollen durch Animationen als solche hervorgehoben werden. Dabei können sie bei Aktivierung verschiedene Effekte/Animationen/Geräusche machen, die den Zweck des Spielobjekts entprechen.
+
 
 % Abschnitt: Nicht-Funktionale Anforderungen
 \section{Nicht-Funktionale Anforderungen}
 \label{sec:grundlagen:nichtFunktionaleAnforderungen}
+Die in Kapitel \ref{sec:grundlagen:funktionaleAnforderungen} beschriebenen funktionale Anforderungen bestimmen die Funktionen und Umfang des Spiels. In der Tabelle \ref{tab:grundlagen:nichtFunktionaleAnforderungen} werden nun die nichtfunktionalen Anforderungen dargelegt, die die Qualität der Umsetzung festlegen.
+
+\begin{center}
+    \label{tab:grundlagen:nichtFunktionaleAnforderungen}
+    \begin{tabular}{ c | l | c}
+        Abkürzung & Anforderung & Priorität\\
+        \hline
+        NFA01 & Zuverlässigkeit & 5 \\
+        \hline
+        NFA02 & Aussehen und Handhabung & 5 \\
+        \hline
+        NFA03 & Benutzbarkeit & 4 \\
+        \hline
+        NFA04 & Funktionalität & 5 \\
+        \hline
+        NFA05 & Effizienz & 3 \\
+    \end{tabular}
+    \captionof{table}{Nichtfunktionale Anforderungen} 
+\end{center}
+
+\textbf{NFA01 Zuverlässigkeit}\\*
+Das Spiel ist konsistent in der Ausführung. Es bricht nicht unerwartet ab und jedes Level kann von beiden Spielern beendet werden.
+
+\textbf{NFA02 Aussehen und Handhabung}\\*
+Das Spiel hinterlässt einen einen guten optischen Eindruck und besitzt eine uintuitive Steuerung.
+
+\textbf{NFA03 Benutzbarkeit}\\*
+Der Ablauf des Spiels ist leicht ersichtlich, sowohl im Menü als auch in den jeweiligen Level.
+
+\textbf{NFA04 Funktionalität}\\*
+Die in Kapitel \ref{sec:grundlagen:funktionaleAnforderungen} vorgestellten Anforderungen werden abhängig von ihrer Priorisierung erfolgreich umgesetzt.
+
+\textbf{NFA05 Effizienz}\\*
+Das Spiel soll auf dem eigenen als auch auf dem Gerät des Mitspielers flüssig laufen. 
+
+
+
