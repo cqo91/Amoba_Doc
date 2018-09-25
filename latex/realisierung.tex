@@ -37,15 +37,22 @@ Unity ist eine Entwicklungsumgebung für Spiele mit geringer Einarbeitungszeit. 
     \item[RayCasting] \hfill \\*
         RayCasting prüft wie ein Collider auf eine Kollision zwischen zwei Objekten. Der Vorteil ist allerdings das auch die Richtung der Kollision (oben, unten, rechts, links) bestimmt werden kann. Zudem kann man auch erkennen, wenn die Objekte kurz vor einer Kollision stehen, das ist insbesondere für den Walljump äußerst praktisch.
     \item[Tilemap] \hfill \\* Mit der Tilemap können schnell 2D-Ebenen erstellt werden. Tilemaps bestehen aus einem Gitter. Die verschiedenen Felder des Gitters können mit \textit{Tiles} gefüllt werden. Diese Tiles bilden die Spieloberfläche auf der der Spieler sich bewegen kann. Sind verschiedene Tiles verfügbar können schnell und einfach neue Level ganz einfach gezeichnet werden. \\ 
-        Bei der Gestaltung von eigenen Tiles ist besonders wichtig, dass die Tiles zueinander passen, also bei einer Anordnung in einer horizontalen Reihe sollten die Tiles rechts und links ineinander übergehen.
-        
+        Bei der Gestaltung von eigenen Tiles ist besonders wichtig, dass die Tiles zueinander passen, also bei einer Anordnung in einer horizontalen Reihe sollten die Tiles rechts und links ineinander übergehen. Hier ein Beispiel für solche Tiles: 
+        \begin{figure}[H]
+            \begin{center}
+              \includegraphics{img/realisierung/tile1.png}
+              \includegraphics{img/realisierung/tile2.png}
+              \includegraphics{img/realisierung/tile3.png}
+              \label{fig:realisierung:realisierung:tiles}
+            \end{center}
+        \end{figure}
         
     \item[Prefabs] \hfill \\* Werden GameObjects mehrfach benötigt und ändern sich in ihrem Verhalten und Aussehen nicht, können Prefabs verwendet werden. Anstatt eine GameObject zu duplizieren und jedes Duplikat bei einer Änderung individuell zu ändern, haben Prefabs den Vorteil die vorgenommene Änderung auf alle Prefabs dieser Art zu übernehmen.
     \item[Inspector] \hfill \\* Projekte im Unity Editor bestehen aus GameObjects die Skripte, Sounds, usw. enthalten. Der Inspector zeigt detaillierte Informationen über jedes Component des ausgewählten GameObjects und erlaubt es dem Entwickler die Daten zu verändern.
     \item[Asset Store] \hfill \\* Der Asset Store ist wie der Nameschon sagt ein Store der viele Assets anbietet, die Entwickler dabei unterstützen ein Spiel zu entwickeln.
 \end{description}
 
-% TODO Code-Snippet aus Vortrag?
+% TODO Code-Snippet aus Vortrag
 
 \subsection{Photon}
 \label{subsec:realisierung:technologien:photon}
