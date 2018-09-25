@@ -1,6 +1,6 @@
 \chapter{Grundlagen}
 \label{cha:grundlagen}
-In diesem Abschnitt werden kurz einige Grundlagen die für das Spiel wichtig sind erklärt. 
+In diesem Abschnitt werden kurz einige Grundlagen, die für das Spiel wichtig sind, erklärt. 
 
 %Abschnitt: Jump 'n' Run
 \section{Jump 'n' Run (Platformer)}
@@ -12,14 +12,14 @@ Das klassiche Jump 'n' Run ist in 2D und die Spielfigur läuft von links nach re
 %Abschnitt: Multiplayer
 \section{Multiplayer}
 \label{sec:grundlagen:multiplayer}
-Klassische Jump'n'Run Spiele wie Mario sind für Einzelspieler konzipiert, aber schon mit der ersten Playstation \{\cite{playstation} setzten sich Multiplayerspiele durch, zunächst waren aufgrund der begrenzten Controller nur 2 Spieler möglich, kabellose Controller und der Durchbruch des Internets eröffneten jedoch die Möglichkeit einer nahezu unbegrenzten Anzahl von Spielern ein gemeinsames Spielerlebnis. \\
-Um dies zu ermöglichen wird auf einer mobilen Platform eine Verbindung zu einem Server, also damit ein Server und eine bestehende Internetverbindung benötigt. Die Spiellogik selber wird über ein Netzwerk realisiert, ein Beispiel für solch ein Netzwerk sind die \textit{Google Play Services} \cite{googleplayservices} von Google. In Unity gibt es dafür das \textit{Photon Unity Networking}, welches später genauer betrachtet wird.
+Klassische Jump'n'Run Spiele wie Mario sind für Einzelspieler konzipiert, aber schon mit der ersten Playstation \cite{playstation} setzten sich Multiplayerspiele durch, zunächst waren aufgrund der begrenzten Controller nur zwei Spieler möglich. Kabellose Controller und der Durchbruch des Internets eröffneten jedoch die Möglichkeit einer nahezu unbegrenzten Anzahl von Spielern ein gemeinsames Spielerlebnis. \\
+Um dies zu ermöglichen wird auf einer mobilen Platform eine Verbindung zu einem Server, also damit ein Server und eine bestehende Internetverbindung benötigt. Die Spiellogik selber wird über ein Netzwerk realisiert, ein Beispiel für solch ein Netzwerk sind die \textit{Google Play Services} \cite{googleplayservices} von Google. In Unity gibt es dafür das \textit{Photon Unity Networking}, welches in Kapitel \ref{subsec:realisierung:technologien:photon} genauer betrachtet wird.
 
 
 % Abschnitt: Spielgrundlagen
 \section{Spielablauf}
 \label{sec:grundlagen:spielgrundlagen}
-Abyss soll ein levelbasiertes Jump'n'Run \ref{sec:grundlagen:jumpnrun} Multiplayer \ref{sec:grundlagen:multiplayer} Spiel werden. \newline
-Ganz wie andere Platformer sollen die Spieler sich auf Platformen in eine Richtung bewegen. Da das Spiel levelbasiert sein soll, ist das Ziel des Spielers das Ende eines jeden Levels zu erreichen und ins nächste Level zu gelangen. \\
+Abyss soll ein levelbasiertes Jump'n'Run Multiplayer Spiel werden. \newline
+Ganz wie andere Platformer sollen die Spieler sich auf Plattformen in eine Richtung bewegen. Da das Spiel levelbasiert sein soll, ist das Ziel des Spielers das Ende eines jeden Levels zu erreichen und ins nächste Level zu gelangen. \\
 Um Eintönigkeit beim Spiel zu vermeiden werden die Level mit unterschiedlichen Schwierigkeiten implementiert, dabei sollen nicht nur Spielitems wie z.B. Power-Ups zum Einsatz kommen, sondern auch bewegliche Objekte, die dem Spieler auch Schaden hinzufügen können. \\
-Damit der Spieler sich möglichst gut im Spiel zurechfindet wird die Steuerung minimal und möglichst einfach gehalten, so können auch Fehleingaben vermieden werden. Des Weiteren soll das Spiel nur im Multiplayermodus gespielt werden können, also werden immer zwei Spieler benötigt um das Spiel zu starten. 
+Damit der Spieler sich möglichst gut im Spiel zurechtfindet wird die Steuerung minimal und möglichst einfach gehalten, so können auch Fehleingaben vermieden werden. Des Weiteren soll das Spiel nur im Multiplayermodus gespielt werden können, also werden immer zwei Spieler benötigt um das Spiel zu starten. 
