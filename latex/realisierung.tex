@@ -1,5 +1,14 @@
 \chapter{Realisierung}
 \label{cha:realisierung}
+
+\subsection{Unity}
+\begin{wrapfigure}{R}{0.3\textwidth}
+    \centering
+    \includegraphics[width=0.3\textwidth]{img/realisierung/Lifecycle}
+      \caption{Unity-Lifecycle}
+      \label{fig:realisierung:technologien:lifecycle}
+\end{wrapfigure}
+
 In diesem Kapitel werden zunächst die Technologien besprochen, die für die Umsetzung nötig waren. Anschließend wird ausgeführt wie das Konzept schlussendlich umgesetzt wurde. Dabei wird auch das Design besprochen und auf Probleme bei der Umsetzung eingangen.
 
 % Abschnitt: Technologien
@@ -7,9 +16,10 @@ In diesem Kapitel werden zunächst die Technologien besprochen, die für die Ums
 \label{sec:grundlagen:technologien}
 Dieser Abschnitt dient dazu die genutzten Technologien kurz vorzustellen und eventuell auf Vor- und Nachteile sowie auf Besonderheiten einzugehen.
 
-\subsection{Unity}
 \label{subsec:realisierung:technologien:unity}
-Unity ist eine Game-Engine der Firma \textit{Unity Technologies}. Die Entwicklungsumgebung der Game-Engine unterstützt mit integrierten Tools für Animation, Partikel-Systemen, Audio-Mixing und Tilemaps den gesamten Arbeitsablauf zum Erstellen von Spielen \cite{unity_mobile}. Unity erlaub dabei das Entwickln von Spielen auf die meisten Plattformen (Windows, Android, iOS, XBox, uvm.) und unterstützt dabei sowohl 2D-, als auch 3D-Spiele.
+Unity ist eine Game-Engine der Firma \textit{Unity Technologies}. Die Entwicklungsumgebung der Game-Engine unterstützt mit integrierten Tools für Animation, Partikel-Systemen, Audio-Mixing und Tilemaps den gesamten Arbeitsablauf zum Erstellen von Spielen \cite{unity_mobile}. Wie bei der nativen App-Entwicklung bietet Unity einen Lifecycle \ref{fig:realisierung:technologien:lifecycle} an, der einem das entwicklen erleichter. 
+
+Unity erlaub dabei das entwickeln von Spielen auf die meisten Plattformen (Windows, Android, iOS, XBox, uvm.) und unterstützt dabei sowohl 2D-, als auch 3D-Spiele. Zumindest für Android wird auch eine gute Kompabilität angeboten, denn es gibt zahlreiche Einstellungen um eine lauffähige App ohne großen Aufwand zu compilen. 
 
 Im Folgendem werden die Vorteile, als auch die Nachteile der Spieleentwicklung mit Unity erläutert. Im Anschluss werden einige der Funktionen von Unity vorgestellt.
 \subsubsection*{Vorteile}
@@ -52,36 +62,41 @@ Unity ist eine Entwicklungsumgebung für Spiele mit geringer Einarbeitungszeit. 
     \item[Asset Store] \hfill \\* Der Asset Store ist wie der Nameschon sagt ein Store der viele Assets anbietet, die Entwickler dabei unterstützen ein Spiel zu entwickeln.
 \end{description}
 
-% TODO Code-Snippet aus Vortrag
 
 \subsection{Photon}
 \label{subsec:realisierung:technologien:photon}
-Um Mulitplayer zu ermöglichen wird Photon verwendet. Photon verwaltet gemeinsame Sitzungen (Räume) von Spielern und ermöglicht es so, Nachrichten und Daten zwischen den verbunden Spielern plattformübergreifend in Echtzeit zu synchronisieren \cite{photon}.
+Um ein Spiel mit mehreren Spielern, eines sogenanntes Multiplayerspiel, zu ermöglichen wird Photon als Netzwerk verwendet. Photon verwaltet gemeinsame Sitzungen (Räume) von Spielern und ermöglicht es so, Nachrichten und Daten zwischen den verbunden Spielern plattformübergreifend in Echtzeit zu synchronisieren \cite{photon}. Für die Verwaltung der Spiele gibt es vordefinierte Methoden, die auf PUN-Events reagieren, zum Beispiel wenn ein Spieler den Raum betreten hat. Diese Methode dazu heißt \textit{OnJoinedRooom()} und nach ihrem Aufruf kann man z.B. einen Wartescreen anzeigen bis das Spiel gestartet wurde.
 
-Mit Photon kann man die neben den netzwerkrelevanten Daten auch die Position und Spielerinformationen unter den Spielern teilen. Dadurch können die jewiligen Endgeräte miteinander kommunizieren und ein gemeinsames Spielen ermöglichen. Dazu stellt Photon eine Vielzahl an Methoden zur Verfügung, die es dem Entwickler ermöglicht die Verbindung zwischen den Spielern aufzubauen, Räume zu erstellen und Spieldaten auszutauschen.
+Mit Photon kann man, neben den netzwerkrelevanten Daten, auch die Position und Spielerinformationen unter den Spielern teilen. Dadurch können die jewiligen Endgeräte miteinander kommunizieren und ein gemeinsames Spielen ermöglichen. Dazu stellt Photon eine Vielzahl an Methoden zur Verfügung, die es dem Entwickler ermöglicht die Verbindung zwischen den Spielern aufzubauen, Räume zu erstellen und Spieldaten auszutauschen.
 
-Eine nützliche Funktion Photons in der Spieleentwicklung sind \textit{Remote Procedure Calls} (RPC), die es ermöglichen Methoden in anderen Adressräumen aufzurufen. Dadurch können die Spieler untereinander Methoden aufrufen und direkt miteinander kommunizieren.
+Eine nützliche Funktion Photons in der Spieleentwicklung sind \textit{Remote Procedure Calls} (RPC), die es ermöglichen Methoden in anderen Adressräumen aufzurufen. Dadurch können die Spieler untereinander Methoden aufrufen und direkt miteinander kommunizieren. In Kapitel \ref{subsec:implementierung:umsetzung:codebeispiele} wird ein solcher RPC anhand eines Codebeispiels näher erläutert.
+
+Allerdings kann PUN nicht nur im Code angewendet werden, sondern über eine \textit{PhotonView} direkt auf einem GameObject genutzt werden, mit weiteren Views ist es dann möglich zum Beispiel die Position und die Animationen eines Spielers zu synchronisieren. 
 
 \subsection{Weitere Frameworks}
 \label{subsec:realisierung:technologien:frameworks}
-Für das An- und Abmelden von Spieleraccount wird eine \textit{Java REST Server} erstellt, der die Nutzer verwaltet. Dabei werden mit der Registrierung Nutzer erstellt und bei der Anmeldung überprüft, ob die jeweiligen Nutzer vorhanden sind und ob die eingegeben Nutzerdaten bei der Anmeldung korrekt sind. Zusätzlich übernimmt der Server die Funktion, die Level nach dem Beendigen des vorherigen Level freizuschalten. Der Server speichert somit neben den Nutzerdaten, die Levelfreigabe der jeweiligen Nutzer. Der Server verwendet dabei eine PostgresSQL-Datenbank.
+Für das An- und Abmelden von Spieleraccount wird ein\textit{Java REST Server} erstellt, der die Nutzer verwaltet und persistiert. Dabei werden mit der Registrierung Nutzer erstellt und bei der Anmeldung überprüft, ob die jeweiligen Nutzer vorhanden sind und ob die eingegeben Nutzerdaten bei der Anmeldung korrekt sind. Zusätzlich übernimmt der Server die Funktion, die Level nach dem Beendigen des vorherigen Level freizuschalten. Der Server speichert somit neben den Nutzerdaten, die Levelfreigabe der jeweiligen Nutzer. Der Server verwendet dabei eine PostgresSQL-Datenbank.
 
 \subsection{Architektur}
 \label{subsec:realisierung:technologien:architektur}
 % Zusammenspiel von Photon, Unity und Server
-Wie Photon und der Java REST Server mit Unity kommunizieren, zeigt Abbildung \ref{fig:realisierung:technologien:architektur}. Nach dem Start der Unity-Anwendung ist der REST-Server für die Anmeldung und die Levelauswahl zuständig. Anschließend verwaltet Photon die verschiedenen Räume und das Spiel an sich.
+Wie die Komponenten, also Photon und der Java REST Server mit Unity kommunizieren, zeigt Abbildung \ref{fig:realisierung:technologien:kommunikation}. Welche Komponente welchen Part im Spiel übernimmt sieht man in der Abbildung \ref{fig:realisierung:technologien:architektur}. Nach dem Start der Unity-Anwendung ist der REST-Server für die Anmeldung und die Levelauswahl zuständig. Anschließend verwaltet Photon die verschiedenen Räume und das Spiel an sich.
 
 \begin{figure}[H]
     \begin{center}
-      \includegraphics[width=\linewidth]{img/realisierung/Architektur}
+      \includegraphics[width=0.8\textwidth]{img/realisierung/Kommunikation}
+      \caption{Kommunikation}
+      \label{fig:realisierung:technologien:kommunikation}
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[width=\linewidth]{img/realisierung/Architektur2}
       \caption{Architektur}
       \label{fig:realisierung:technologien:architektur}
     \end{center}
 \end{figure}
-
-%\subsection{Unity \& Mobile Applications}
-%\label{subsec:implementierung:technologien:mobile}
-% ich weiß nicht was da rein soll^^ TODO
 
 \section{Umsetzung}
 \label{sec:grundlagen:umsetzung}
@@ -136,7 +151,7 @@ Im Hauptmenü entscheidet der Spieler, ob er ein Spiel erstellt oder einem berei
     \end{center}
 \end{figure}
 
-Das Spiel bietet dem Spieler die Möglichkeit die Lautstärke zu ändern. Dabei können drei verschiedene Lautstärken verändert werden. Zum einen kann die Hintergrundmusiklautstärke der jeweiligen Szene und zum anderen die In-Game-Geräsche (Springen, Schaden, Nutzen von Portalen) verändert werden. Die dritte Möglichkeit ist es das Audiofeedback nach einem Buttonklick zu variieren. Diese drei Audiomanager sind voneinander unabhängig und können so individuell verändert werden.
+Das Spiel bietet dem Spieler die Möglichkeit die Lautstärke zu ändern. Dabei können drei verschiedene Lautstärken verändert werden. Zum einen kann die Hintergrundmusiklautstärke der jeweiligen Szene und zum anderen die In-Game-Geräusche (Springen, Schaden, Nutzen von Portalen) verändert werden. Die dritte Möglichkeit ist es das Audiofeedback nach einem Buttonklick zu variieren. Diese drei Audiomanager sind voneinander unabhängig und können so individuell verändert werden.
 
 \begin{figure}[H]
     \begin{center}
@@ -255,13 +270,18 @@ Um das Spiel noch etwas dynamischer zu gestalten, können die Spieler die in Abb
     \label{fig:barriereandportal}
 \end{figure}
 
+\section{Levelaufbau}
+\label{sec:implementierung:levelaufbau}
+Da nun alle Spielobjekte vorgestellt wurden bleibt noch die Frage wie diese zusammengesetzt werden um ein fertiges Level zu gestalten. Dafür fängt man in Unity mit einem Hintergrundbild an. Anschließend werden Tiles platziert, diese dienen später als Untergrund auf dem der Spieler sich fortbewegt, sie können aber auch als Wände dienen. Als nächstes können verschiedene Objekte, die lediglich zur Gestaltung dienen eingefügt werden, darunter fallen zum Beispiel Bäume oder auch Wolken. Nun folgen Assets und Gameobjects mit denen der Spieler interargieren kann. Zum Schluss wird der Spieler an einer passender Position eingefügt. \\
+Damit ein reibungsloser Ablauf möglich ist sind natürlich mehrere Durchläufe nötig, denn gerade bei den Tiles und interaktiven Objekten ist es wichtig, dass der Spieler diese auch erreicht und geplante Bewegungen durchführen kann.
+
 \newpage
 \section{Probleme}
 \label{sec:implementierung:probleme}
 % Design von Assets -> Kostenlose genommen, da aufwändig
 \begin{description}
-    \item[Git] \hfill \\* Wie in Kapitel \ref{subsec:realisierung:technologien:unity} bereits erwähnt, ist die Kompatibilität von Unity und Git verbesserungsfähig. Bei der Entwicklung sind oft unvorhergesehene Refernzfehler aufgetreten, was das Spiel unspielbar machte und einige Zeit zum Aussbessern benötigte.
-    \item[Assets] \hfill \\* Das Erstellen von UI-Elementen ist sehr aufwändig. Zusätzlich benötigt man für ein visuell ansprechendes UI-Element eine gewisse künstlerische Begabung, die nicht immer vorhanden ist. Sollen die verschiedenen UI-Elemente Animiert sein, muss jeder Frame extra gemalt werden. Diese bedeutet einen großen Aufwand mit unbefriedigenden Resultaten. Daher wurde für die Entwicklung dieser Anwendung vorgefertigte Assets verwendet.
+    \item[Git] \hfill \\* Wie in Kapitel \ref{subsec:realisierung:technologien:unity} bereits erwähnt, ist die Kompatibilität von Unity und Git verbesserungsfähig. Bei der Entwicklung sind oft unvorhergesehene Referenzfehler aufgetreten, was das Spiel unspielbar machte und einige Zeit zum Ausbessern benötigte. Dafür war es unter anderem nötig die Referenzen auf ein Minimum zu beschränken.
+    \item[Assets] \hfill \\* Das Erstellen von UI-Elementen ist sehr aufwändig. Zusätzlich benötigt man für ein visuell ansprechendes UI-Element eine gewisse künstlerische Begabung, die nicht immer vorhanden ist. Sollen die verschiedenen UI-Elemente animiert sein, muss jeder Frame extra gemalt werden. Diese bedeutet einen großen Aufwand mit unbefriedigenden Resultaten. Daher wurde für die Entwicklung dieser Anwendung vorgefertigte Assets verwendet.
     \item[Musik/Sounds] \hfill \\* Ähnlich wie bei den Assets sollten ursprünglich eigene Soundeffekte und Musik verwendet werden. Doch das Erstellen gestaltete sich als kompizierter und aufwändiger als gedacht. Daher haben wir auch in diesem Fall auf eine vorgefertigte und kostenlose Variante zurückgegriffen.
 \end{description}
 
