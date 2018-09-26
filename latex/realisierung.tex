@@ -9,7 +9,7 @@
       \label{fig:realisierung:technologien:lifecycle}
 \end{wrapfigure}
 
-In diesem Kapitel werden zunächst die Technologien besprochen, die für die Umsetzung nötig waren. Anschließend wird ausgeführt wie das Konzept schlussendlich umgesetzt wurde. Dabei wird auch das Design besprochen und auf Probleme bei der Umsetzung eingangen.
+In diesem Kapitel werden zunächst die Technologien besprochen, die für die Umsetzung nötig waren. Anschließend wird ausgeführt wie das Konzept schlussendlich umgesetzt wurde. Dabei wird auch das Design besprochen und auf Probleme bei der Umsetzung eingegangen.
 
 % Abschnitt: Technologien
 \section{Technologien}
@@ -17,16 +17,16 @@ In diesem Kapitel werden zunächst die Technologien besprochen, die für die Ums
 Dieser Abschnitt dient dazu die genutzten Technologien kurz vorzustellen und eventuell auf Vor- und Nachteile sowie auf Besonderheiten einzugehen.
 
 \label{subsec:realisierung:technologien:unity}
-Unity ist eine Game-Engine der Firma \textit{Unity Technologies}. Die Entwicklungsumgebung der Game-Engine unterstützt mit integrierten Tools für Animation, Partikel-Systemen, Audio-Mixing und Tilemaps den gesamten Arbeitsablauf zum Erstellen von Spielen \cite{unity_mobile}. Wie bei der nativen App-Entwicklung bietet Unity einen Lifecycle \ref{fig:realisierung:technologien:lifecycle} an, der einem das entwicklen erleichter. 
+Unity ist eine Game-Engine der Firma \textit{Unity Technologies}. Die Entwicklungsumgebung der Game-Engine unterstützt mit integrierten Tools für Animation, Partikel-Systemen, Audio-Mixing und Tilemaps den gesamten Arbeitsablauf zum Erstellen von Spielen \cite{unity_mobile}. Wie bei der nativen App-Entwicklung bietet Unity einen Lifecycle \ref{fig:realisierung:technologien:lifecycle} an, der einem das Entwickeln erleichtert. 
 
-Unity erlaub dabei das entwickeln von Spielen auf die meisten Plattformen (Windows, Android, iOS, XBox, uvm.) und unterstützt dabei sowohl 2D-, als auch 3D-Spiele. Zumindest für Android wird auch eine gute Kompabilität angeboten, denn es gibt zahlreiche Einstellungen um eine lauffähige App ohne großen Aufwand zu compilen. 
+Unity erlaub dabei das Entwickeln von Spielen auf die meisten Plattformen (Windows, Android, iOS, XBox, uvm.) und unterstützt dabei sowohl 2D-, als auch 3D-Spiele. Zumindest für Android wird auch eine gute Komptabilität angeboten, denn es gibt zahlreiche Einstellungen um eine lauffähige App ohne großen Aufwand zu compilen. 
 
 Im Folgendem werden die Vorteile, als auch die Nachteile der Spieleentwicklung mit Unity erläutert. Im Anschluss werden einige der Funktionen von Unity vorgestellt.
 \subsubsection*{Vorteile}
 \begin{itemize}
     \item Die von Unity verwendete Programmiersprache ist C\#, welche sehr ähnlich zu Java ist. Java als Programmiersprache ist uns (dem Team) gut geläufig, wodurch wir uns die Einarbeitungszeit in eine Programmiersprache ersparten.
     \item Unity unterstützt, die von uns vorgesehene Levelgestaltung, mit \textit{Tilemaps}. Damit wird das Bauen von Levelstrukturen und Hindernissen einfacher und schneller.
-    \item Unity bietet durch seinen Asset-Store eine Großzahl an Vorlagen von jedlichen Spielfiguren, Plugins und weiteren vordefienierten Spielfunktionen (teils kostenpflichtig).
+    \item Unity bietet durch seinen Asset-Store eine Großzahl an Vorlagen von jeglichen Spielfiguren, Plugins und weiteren vordefinierten Spielfunktionen (teils kostenpflichtig).
     \item Unity besitzt viele vordefinierte Funktionen, die dem Entwickler die Arbeit erheblich vereinfachen. Zum Beispiel können die im Spiel verwendete \textit{Physics} einfach konfiguriert werden und müssen nicht extra entwickelt werden.
     \item Das Builden der Anwendung auf Android (die Zielplattform) ist sehr schnell und unkompliziert. Allgemein besitzt Unity und Android eine gute Kompatibilität.
 \end{itemize}
@@ -34,11 +34,11 @@ Im Folgendem werden die Vorteile, als auch die Nachteile der Spieleentwicklung m
 \subsubsection*{Nachteile}
 \begin{itemize}
     \item Da für jedes selbst entwickelte Skript eine eigene Datei erstellt werden muss und Unity sehr viele Funktionen bereits implementiert hat, wird die Entwicklungsumgebung schnell unübersichtlich. Das erschwert das Arbeiten und verlangsamt den Arbeitsprozess.
-    \item Unity ist eine (für uns) eine komlett neue Arbeitsumgebung. Die Levelgestaltung im Editor und unterschiedlichen Funktionen, die mit Unity einhergehen sind ungewohnt.
+    \item Unity ist eine (für uns) eine komplett neue Arbeitsumgebung. Die Levelgestaltung im Editor und unterschiedlichen Funktionen, die mit Unity einhergehen sind ungewohnt.
     \item Das Arbeiten im Team erfordert die Einbeziehung von Git, jedoch besitzt Unity keine gute Kompatibilität mit Git. Es treten nach dem Mergen oft Probleme auf und erschweren ein schnelles Entwickeln der Anwendung.
 \end{itemize}
 
-Unity ist eine Entwicklungsumgebung für Spiele mit geringer Einarbeitungszeit. Unity bietet mit seinen Funktionen die optimale Programmierumgebung um ein 2D-Jump 'n' Run-Muliplayer-Spiel zu erstellen. Einige der Funktionen werden im Folgenden vorgestellt.
+Unity ist eine Entwicklungsumgebung für Spiele mit geringer Einarbeitungszeit. Unity bietet mit seinen Funktionen die optimale Programmierumgebung um ein 2D-Jump 'n' Run-Multiplayer-Spiel zu erstellen. Einige der Funktionen werden im Folgenden vorgestellt.
 
 \begin{description}
     \item[GameObjects] \hfill \\* Ein GameObject ist die Basisklasse für alle Entitäten einer Unity-Szene.
@@ -50,9 +50,9 @@ Unity ist eine Entwicklungsumgebung für Spiele mit geringer Einarbeitungszeit. 
         Bei der Gestaltung von eigenen Tiles ist besonders wichtig, dass die Tiles zueinander passen, also bei einer Anordnung in einer horizontalen Reihe sollten die Tiles rechts und links ineinander übergehen. Hier ein Beispiel für solche Tiles: 
         \begin{figure}[H]
             \begin{center}
-              \includegraphics{img/realisierung/tile1.png}
-              \includegraphics{img/realisierung/tile2.png}
-              \includegraphics{img/realisierung/tile3.png}
+              \includegraphics[width=50px]{img/realisierung/tile1.png}
+              \includegraphics[width=50px]{img/realisierung/tile2.png}
+              \includegraphics[width=50px]{img/realisierung/tile3.png}
               \label{fig:realisierung:realisierung:tiles}
             \end{center}
         \end{figure}
@@ -65,9 +65,9 @@ Unity ist eine Entwicklungsumgebung für Spiele mit geringer Einarbeitungszeit. 
 
 \subsection{Photon}
 \label{subsec:realisierung:technologien:photon}
-Um ein Spiel mit mehreren Spielern, eines sogenanntes Multiplayerspiel, zu ermöglichen wird Photon als Netzwerk verwendet. Photon verwaltet gemeinsame Sitzungen (Räume) von Spielern und ermöglicht es so, Nachrichten und Daten zwischen den verbunden Spielern plattformübergreifend in Echtzeit zu synchronisieren \cite{photon}. Für die Verwaltung der Spiele gibt es vordefinierte Methoden, die auf PUN-Events reagieren, zum Beispiel wenn ein Spieler den Raum betreten hat. Diese Methode dazu heißt \textit{OnJoinedRooom()} und nach ihrem Aufruf kann man z.B. einen Wartescreen anzeigen bis das Spiel gestartet wurde.
+Um ein Spiel mit mehreren Spielern, ein sogenanntes Multiplayerspiel, zu ermöglichen wird Photon als Netzwerk verwendet. Photon verwaltet gemeinsame Sitzungen (Räume) von Spielern und ermöglicht es so, Nachrichten und Daten zwischen den verbundenen Spielern plattformübergreifend in Echtzeit zu synchronisieren \cite{photon}. Für die Verwaltung der Spiele gibt es vordefinierte Methoden, die auf PUN-Events reagieren, zum Beispiel wenn ein Spieler den Raum betreten hat. Diese Methode dazu heißt \textit{OnJoinedRooom()} und nach ihrem Aufruf kann man z.B. einen Wartescreen anzeigen bis das Spiel gestartet wurde.
 
-Mit Photon kann man, neben den netzwerkrelevanten Daten, auch die Position und Spielerinformationen unter den Spielern teilen. Dadurch können die jewiligen Endgeräte miteinander kommunizieren und ein gemeinsames Spielen ermöglichen. Dazu stellt Photon eine Vielzahl an Methoden zur Verfügung, die es dem Entwickler ermöglicht die Verbindung zwischen den Spielern aufzubauen, Räume zu erstellen und Spieldaten auszutauschen.
+Mit Photon kann man, neben den netzwerkrelevanten Daten, auch die Position und Spielerinformationen unter den Spielern teilen. Dadurch können die jeweiligen Endgeräte miteinander kommunizieren und ein gemeinsames Spielen ermöglichen. Dazu stellt Photon eine Vielzahl an Methoden zur Verfügung, die es dem Entwickler ermöglicht die Verbindung zwischen den Spielern aufzubauen, Räume zu erstellen und Spieldaten auszutauschen.
 
 Eine nützliche Funktion Photons in der Spieleentwicklung sind \textit{Remote Procedure Calls} (RPC), die es ermöglichen Methoden in anderen Adressräumen aufzurufen. Dadurch können die Spieler untereinander Methoden aufrufen und direkt miteinander kommunizieren. In Kapitel \ref{subsec:implementierung:umsetzung:codebeispiele} wird ein solcher RPC anhand eines Codebeispiels näher erläutert.
 
@@ -75,7 +75,7 @@ Allerdings kann PUN nicht nur im Code angewendet werden, sondern über eine \tex
 
 \subsection{Weitere Frameworks}
 \label{subsec:realisierung:technologien:frameworks}
-Für das An- und Abmelden von Spieleraccount wird ein\textit{Java REST Server} erstellt, der die Nutzer verwaltet und persistiert. Dabei werden mit der Registrierung Nutzer erstellt und bei der Anmeldung überprüft, ob die jeweiligen Nutzer vorhanden sind und ob die eingegeben Nutzerdaten bei der Anmeldung korrekt sind. Zusätzlich übernimmt der Server die Funktion, die Level nach dem Beendigen des vorherigen Level freizuschalten. Der Server speichert somit neben den Nutzerdaten, die Levelfreigabe der jeweiligen Nutzer. Der Server verwendet dabei eine PostgresSQL-Datenbank.
+Für das An- und Abmelden von Spieleraccount wird ein \textit{Java REST Server} erstellt, der die Nutzer verwaltet und persistiert. Dabei werden mit der Registrierung Nutzer erstellt und bei der Anmeldung überprüft, ob die jeweiligen Nutzer vorhanden sind und ob die eingegeben Nutzerdaten bei der Anmeldung korrekt sind. Zusätzlich übernimmt der Server die Funktion, die Level nach dem Beendigen des vorherigen Level freizuschalten. Der Server speichert somit neben den Nutzerdaten, die Levelfreigabe der jeweiligen Nutzer. Der Server verwendet dabei eine PostgresSQL-Datenbank.
 
 \subsection{Architektur}
 \label{subsec:realisierung:technologien:architektur}
@@ -229,7 +229,7 @@ Das Level stellt auch Hindernisse für die Spieler. Durch bewegliche und statisc
     \label{fig:maceandspike}
 \end{figure}
 
-Sollte ein Spieler leben verloren haben, kann er durch das Einsammeln eines Power-Ups geheilt werden (vgl. Abbildung \ref{fig:eat}). Dieses Power-Up heilt ein Teil des verlorenen Lebens. 
+Sollte ein Spieler Leben verloren haben, kann er durch das Einsammeln eines Power-Ups geheilt werden (vgl. Abbildung \ref{fig:eat}). Dieses Power-Up heilt ein Teil des verlorenen Lebens. 
 Levelübergreifend kann der Spieler Münzen sammeln. Die Münzen haben eine kompetitive Funktion. Spieler können sich daran messen, wer eine größere Anzahl an Münzen besitzt. Eine Münze wird in Abbildung \ref{fig:coin} dargestellt.
 
 \begin{figure}[H]
@@ -251,7 +251,7 @@ Levelübergreifend kann der Spieler Münzen sammeln. Die Münzen haben eine komp
 
 Das Spielkonzept der Zusammenarbeit der Spieler wurde durch das Verwenden von Portalen und Barrieren ermöglicht. Barrieren sind nur für den Spieler durchlässig, der die selbe Farbe wie die Barriere besitzt (vgl. Abbildung \ref{fig:barriere}). Der andere Spieler kann diese Barriere nicht durchqueren. Dadurch müssen Spieler verschiedene Wege gehen oder nur ein bestimmter Spieler kann ein bestimmtes Spielobjekt (Schlüssel, Power-Up) erreichen.
 
-Um das Spiel noch etwas dynamischer zu gestalten, können die Spieler die in Abbildung \ref{fig:portal} dargestellten Portale benutzen. Jedes Portal hängt mit einem weiteren Portal zusammen, zu dem der Spieler beim Betreten des ersten Portal teleportiert wird und umgekehrt. Dadurch können Spielbereiche erreicht werden, die der Spieler ohne das Verwenden von Portalen nicht erreichen kann.
+Um das Spiel noch etwas dynamischer zu gestalten, können die Spieler die in Abbildung \ref{fig:portal} dargestellten Portale benutzen. Jedes Portal hängt mit einem weiteren Portal zusammen, zu dem der Spieler beim Betreten des ersten Portals teleportiert wird und umgekehrt. Dadurch können Spielbereiche erreicht werden, die der Spieler ohne das Verwenden von Portalen nicht erreichen kann.
 
 \begin{figure}[H]
     \centering
@@ -272,17 +272,16 @@ Um das Spiel noch etwas dynamischer zu gestalten, können die Spieler die in Abb
 
 \section{Levelaufbau}
 \label{sec:implementierung:levelaufbau}
-Da nun alle Spielobjekte vorgestellt wurden bleibt noch die Frage wie diese zusammengesetzt werden um ein fertiges Level zu gestalten. Dafür fängt man in Unity mit einem Hintergrundbild an. Anschließend werden Tiles platziert, diese dienen später als Untergrund auf dem der Spieler sich fortbewegt, sie können aber auch als Wände dienen. Als nächstes können verschiedene Objekte, die lediglich zur Gestaltung dienen eingefügt werden, darunter fallen zum Beispiel Bäume oder auch Wolken. Nun folgen Assets und Gameobjects mit denen der Spieler interargieren kann. Zum Schluss wird der Spieler an einer passender Position eingefügt. \\
+Da nun alle Spielobjekte vorgestellt wurden bleibt noch die Frage wie diese zusammengesetzt werden um ein fertiges Level zu gestalten. Dafür fängt man in Unity mit einem Hintergrundbild an. Anschließend werden Tiles platziert, diese dienen später als Untergrund auf dem der Spieler sich fortbewegt, sie können aber auch als Wände dienen. Als nächstes können verschiedene Objekte, die lediglich zur Gestaltung dienen eingefügt werden, darunter fallen zum Beispiel Bäume oder auch Wolken. Nun folgen Assets und Gameobjects mit denen der Spieler interagieren kann. Zum Schluss wird der Spieler an einer passenden Position eingefügt. \\
 Damit ein reibungsloser Ablauf möglich ist sind natürlich mehrere Durchläufe nötig, denn gerade bei den Tiles und interaktiven Objekten ist es wichtig, dass der Spieler diese auch erreicht und geplante Bewegungen durchführen kann.
 
-\newpage
 \section{Probleme}
 \label{sec:implementierung:probleme}
 % Design von Assets -> Kostenlose genommen, da aufwändig
 \begin{description}
     \item[Git] \hfill \\* Wie in Kapitel \ref{subsec:realisierung:technologien:unity} bereits erwähnt, ist die Kompatibilität von Unity und Git verbesserungsfähig. Bei der Entwicklung sind oft unvorhergesehene Referenzfehler aufgetreten, was das Spiel unspielbar machte und einige Zeit zum Ausbessern benötigte. Dafür war es unter anderem nötig die Referenzen auf ein Minimum zu beschränken.
     \item[Assets] \hfill \\* Das Erstellen von UI-Elementen ist sehr aufwändig. Zusätzlich benötigt man für ein visuell ansprechendes UI-Element eine gewisse künstlerische Begabung, die nicht immer vorhanden ist. Sollen die verschiedenen UI-Elemente animiert sein, muss jeder Frame extra gemalt werden. Diese bedeutet einen großen Aufwand mit unbefriedigenden Resultaten. Daher wurde für die Entwicklung dieser Anwendung vorgefertigte Assets verwendet.
-    \item[Musik/Sounds] \hfill \\* Ähnlich wie bei den Assets sollten ursprünglich eigene Soundeffekte und Musik verwendet werden. Doch das Erstellen gestaltete sich als kompizierter und aufwändiger als gedacht. Daher haben wir auch in diesem Fall auf eine vorgefertigte und kostenlose Variante zurückgegriffen.
+    \item[Musik/Sounds] \hfill \\* Ähnlich wie bei den Assets sollten ursprünglich eigene Soundeffekte und Musik verwendet werden. Doch das Erstellen gestaltete sich als komplizierter und aufwändiger als gedacht. Daher haben wir auch in diesem Fall auf eine vorgefertigte und kostenlose Variante zurückgegriffen.
 \end{description}
 
 
